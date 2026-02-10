@@ -1,190 +1,194 @@
-/* --- 1. Reset & Global Styles --- */
+/* ===== IMPORT FONT (WAJIB) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===== GLOBAL ===== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Memastikan padding tidak merusak lebar elemen */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font modern */
-    scroll-behavior: smooth; /* Efek scroll halus saat klik menu navigasi */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #ffffff; /* Latar belakang putih bersih */
-    color: #333; /* Warna teks utama abu gelap agar nyaman dibaca */
-    line-height: 1.6;
+    background-color: #fdfcfe;
+    color: #444;
+    min-height: 100vh;
 }
 
-/* --- 2. Navigasi --- */
+/* ===== NAVIGATION ===== */
 header {
-    background-color: #fff;
-    padding: 1rem 10%;
-    position: fixed; /* Navigasi tetap di atas saat di-scroll */
+    background-color: #ffffff;
+    padding: 15px 10%;
+    position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Bayangan tipis di bawah nav */
+    box-shadow: 0 4px 10px rgba(106, 27, 154, 0.1);
 }
 
 nav {
     display: flex;
-    justify-content: space-between; /* Logo di kiri, menu di kanan */
+    justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: bold;
-    color: #6a1b9a; /* Warna Ungu */
+    color: #6a1b9a;
 }
 
 .logo span {
-    color: #ff4081; /* Warna Pink untuk variasi */
+    color: #ff4081;
 }
 
 nav ul {
     display: flex;
-    list-style: none; /* Menghilangkan titik list */
+    list-style: none;
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #6a1b9a;
     font-weight: 500;
-    transition: 0.3s; /* Efek transisi halus saat hover */
+    transition: 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ff4081; /* Berubah jadi pink saat disentuh mouse */
+    color: #ff4081;
 }
 
-/* --- 3. Hero Section (Home) --- */
+/* ===== HERO ===== */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10%;
-    background: linear-gradient(135deg, #f3e5f5 0%, #fce4ec 100%); /* Gradasi ungu-pink muda */
-    margin-top: 60px;
+    padding: 120px 10% 60px; /* FIX untuk header fixed */
+    background: linear-gradient(135deg, #f3e5f5, #fce4ec);
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    color: #6a1b9a;
+    font-size: 3.5rem;
+    color: #4a148c;
     margin-bottom: 10px;
 }
 
 .hero-content p {
     font-size: 1.1rem;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     max-width: 500px;
-}
-
-.hero-logo img {
-    width: 300px;
-    border-radius: 50%; /* Membuat foto profil bulat */
-    border: 5px solid #fff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .btn-hero {
     display: inline-block;
-    padding: 10px 25px;
+    padding: 12px 30px;
     background-color: #6a1b9a;
     color: #fff;
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 50px;
+    font-weight: bold;
     transition: 0.3s;
 }
 
 .btn-hero:hover {
     background-color: #ff4081;
-    transform: translateY(-3px); /* Efek melompat sedikit ke atas */
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4);
 }
 
-/* --- 4. About Section --- */
+.hero-logo img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border: 8px solid #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* ===== CONTAINER ===== */
 .container {
     padding: 80px 10%;
     text-align: center;
 }
 
-.about {
-    background-color: #fff;
-}
-
-.about-content {
-    max-width: 800px;
-    margin: 0 auto; /* Menengahkan teks */
-    text-align: justify; /* Teks rata kanan-kiri */
-}
-
 h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #6a1b9a;
-    position: relative;
+    font-size: 2.5rem;
+    color: #4a148c;
+    margin-bottom: 40px;
 }
 
-h2::after { /* Garis dekorasi di bawah judul */
+h2::after {
     content: '';
-    display: block;
-    width: 50px;
+    width: 60px;
     height: 4px;
     background: #ff4081;
+    display: block;
     margin: 10px auto;
 }
 
-/* --- 5. Proyek (Grid System) --- */
+/* ===== ABOUT ===== */
+.about-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* ===== PROYEK ===== */
 .bg-light {
-    background-color: #f9f9f9;
+    background-color: #f8f0fc;
 }
 
 .proyek-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Kolom otomatis sejajar */
-    gap: 20px; /* Jarak antar kartu */
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
 .proyek-card {
     background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
     text-decoration: none;
     color: inherit;
-    border-radius: 15px;
-    overflow: hidden; /* Agar gambar tidak keluar dari border radius */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .proyek-card:hover {
-    transform: scale(1.03); /* Membesar sedikit saat di-hover */
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(106, 27, 154, 0.2);
 }
 
 .proyek-card img {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* Menyesuaikan gambar agar tidak gepeng */
+    object-fit: cover;
 }
 
 .proyek-info {
-    padding: 15px;
+    padding: 20px;
     text-align: left;
 }
 
 .proyek-info h3 {
     color: #6a1b9a;
-    margin-bottom: 5px;
 }
 
-/* --- 6. Media Sosial --- */
+/* ===== MEDSOS ===== */
 .medsos-list {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Agar responsif jika layar kecil */
-    gap: 30px;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 .medsos-item {
@@ -193,23 +197,40 @@ h2::after { /* Garis dekorasi di bawah judul */
     align-items: center;
     text-decoration: none;
     color: #6a1b9a;
-}
-
-.medsos-item img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    font-weight: bold;
     transition: 0.3s;
 }
 
-.medsos-item:hover img {
-    filter: grayscale(1) brightness(0.5); /* Efek saat hover icon */
+.medsos-item img {
+    width: 60px;
+    margin-bottom: 10px;
 }
 
-/* --- 7. Footer --- */
+.medsos-item:hover {
+    color: #ff4081;
+    transform: scale(1.1);
+}
+
+/* ===== FOOTER ===== */
 footer {
-    background-color: #6a1b9a;
-    color: #fff;
-    padding: 20px;
+    padding: 30px;
+    background-color: #4a148c;
+    color: white;
     text-align: center;
+}
+
+/* ===== RESPONSIVE (WAJIB) ===== */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-logo {
+        margin-top: 30px;
+    }
+
+    nav ul {
+        display: none;
+    }
 }
